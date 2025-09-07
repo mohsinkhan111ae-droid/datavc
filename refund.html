@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Refund</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="container">
+  <div class="header card"><h2>Request Refund</h2></div>
+  <div class="card">
+    <p class="muted">Fill details to request a refund. Our team will review and respond on WhatsApp.</p>
+    <div style="margin-top:8px;">
+      <input id="rName" type="text" placeholder="Name">
+      <input id="rTxn" type="text" placeholder="Transaction UTR / Txn ID" style="margin-top:8px;">
+      <textarea id="rReason" rows="3" placeholder="Reason for refund" style="margin-top:8px;"></textarea>
+      <div class="actions" style="margin-top:8px;">
+        <button class="btn" onclick="submitRefund()">Send Refund Request</button>
+        <a class="btn ghost small" href="index.html">Back</a>
+      </div>
+      <div id="refundMsg" class="muted" style="margin-top:8px;"></div>
+    </div>
+  </div>
+  <div class="footer">We will contact you on WhatsApp: 6005099281</div>
+</div>
+<script>
+function submitRefund(){
+  const rTxn=document.getElementById('rTxn').value.trim();
+  if(!rTxn){ document.getElementById('refundMsg').innerText='Please enter transaction id.'; return; }
+  document.getElementById('refundMsg').innerText='Refund request sent. We will contact you on WhatsApp.';
+}
+</script>
+</body>
+</html>

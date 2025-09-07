@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Withdrawals</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="container">
+  <div class="header card"><h2>Recent Withdrawals</h2></div>
+  <div class="card">
+    <div id="fullList"></div>
+    <div class="actions" style="margin-top:12px;">
+      <a class="btn ghost small" href="index.html">Back</a>
+    </div>
+  </div>
+  <div class="footer">Demo withdrawal data for display purposes only.</div>
+</div>
+<script src="shared.js"></script>
+<script>
+const all = makeWithdrawals(30);
+const full = document.getElementById('fullList');
+for(let i=0;i<all.length;i++){
+  const it=all[i];
+  const row=document.createElement('div');
+  row.style.display='flex'; row.style.justifyContent='space-between'; row.style.padding='10px 6px'; row.style.borderBottom='1px dashed #eef6ef';
+  row.innerHTML = '<div><strong>'+it.id+'</strong><div style="font-size:12px;color:#6b7280;">'+it.txn+'</div></div><div style="text-align:right;"><div style="color:green;font-weight:700;">₹'+it.amount+'</div><div style="font-size:12px;color:#6b7280;">Successful</div></div>';
+  full.appendChild(row);
+}
+</script>
+</body>
+</html>

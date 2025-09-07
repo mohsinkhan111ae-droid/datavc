@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Referral</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="container">
+  <div class="header card"><h2>Referral</h2></div>
+  <div class="card">
+    <p class="muted">Share your referral link to earn rewards.</p>
+    <input type="text" id="refLink" readonly value="https://example.com/ref=USER123" style="margin-top:8px;padding:8px;border-radius:8px;border:1px solid #e6f0fb;width:100%;">
+    <div class="actions" style="margin-top:10px;">
+      <button class="btn" onclick="copyLink()">Copy Link</button>
+      <a class="btn ghost small" href="index.html">Back</a>
+    </div>
+    <div id="copyMsg" class="muted" style="margin-top:8px;"></div>
+  </div>
+  <div class="footer">Keep your referral link safe.</div>
+</div>
+<script>
+function copyLink(){ const el=document.getElementById('refLink'); el.select(); document.execCommand('copy'); document.getElementById('copyMsg').innerText='Copied to clipboard.'; }
+</script>
+</body>
+</html>
